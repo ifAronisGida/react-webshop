@@ -11,6 +11,15 @@
     padding: 25px;
   }
 
+  .greeting {
+    width: 50%;
+    height: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
   .options {
     width: 50%;
     height: 100%;
