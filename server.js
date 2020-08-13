@@ -35,12 +35,21 @@ app.post('/payment', (req, res) => {
 			source: req.body.token.id,
 		})
 		.then((customer) =>
-			stripe.charges.create({
-				amount: req.body.amount,
-				description: 'demo',
-				currency: 'EUR',
-				customer: customer.id,
-			})
-		)
-		.then((charge) => res.status(200).send({ success: 'success' }));
+			stripe.charges.create(
+				{
+					amount: req.body.amount,
+					description: 'demo',
+					currency: 'EUR',
+					// customer: customer.id,
+				},
+				(stripeErr, stripeRes) => {
+					if (stripeErr) {
+						res.status(500).send({ error: stripeErr });
+					} else {
+						res.status(200).send({ success: stripeRes });
+					}
+				}
+			)
+		);
+	// .then((charge) => res.status(200).send({ success: 'success' }));
 });
