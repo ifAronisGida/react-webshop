@@ -40,7 +40,7 @@ app.post('/payment', (req, res) => {
 					amount: req.body.amount,
 					description: 'demo',
 					currency: 'EUR',
-					// customer: customer.id,
+					customer: customer.id,
 				},
 				(stripeErr, stripeRes) => {
 					if (stripeErr) {
