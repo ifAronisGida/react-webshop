@@ -12,7 +12,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 //import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
-import './App.css';
+import './App.scss';
 
 const App = ({ checkUserSession, currentUser }) => {
 	useEffect(() => {
