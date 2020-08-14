@@ -9,6 +9,10 @@
 	margin: 0 7.5px 15px;
 	overflow: hidden;
 
+	@media screen and (min-width: 800px) {
+		height: 350px;
+	}
+
 	&:hover {
 		cursor: pointer;
 
